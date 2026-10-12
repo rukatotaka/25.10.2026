@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gửi Mỹ Hảo ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+:root {
+  --nen: #f5e7e2;
+  --giay: #fffaf4;
+  --hong: #c77d8e;
+  --chu: #634e4a;
+  --chu-nhat: #987d78;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1px 0;
+  background: var(--nen);
+  color: var(--chu);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  line-height: 1.8;
+}
+
+.trang-giay {
+  position: relative;
+  overflow: hidden;
+  width: min(760px, calc(100% - 28px));
+  margin: 28px auto;
+  padding: 30px;
+  background: var(--giay);
+  border: 1px solid #ead5cc;
+  box-shadow: 0 10px 35px #88645c1a;
+}
+
+.bang-keo {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  width: 95px;
+  height: 25px;
+  background: #e9c2c6bd;
+  transform: translateX(-50%) rotate(-4deg);
+}
+
+.tieu-de-nho {
+  margin-top: 22px;
+  text-align: center;
+  color: var(--hong);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+h1, h2, .viet-tay {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+h1 {
+  margin: 25px 0 12px;
+  text-align: center;
+  font-size: clamp(36px, 7vw, 55px);
+  line-height: 1.3;
+}
+
+h1 em {
+  color: var(--hong);
+}
+
+.mo-dau {
+  text-align: center;
+  color: var(--chu-nhat);
+  font-size: 13px;
+}
+
+.trang-tri {
+  margin: 22px 0;
+  text-align: center;
+  font-size: 25px;
+}
+
+.khung-anh {
+  max-width: 350px;
+  margin: 28px auto 35px;
+  padding: 12px 12px 20px;
+  background: white;
+  box-shadow: 0 5px 18px #725b501c;
+  transform: rotate(-2deg);
+}
+
+.khung-anh img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: #f3e3e1;
+}
+
+.chu-thich-anh {
+  padding-top: 12px;
+  text-align: center;
+  color: #a0787c;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.phan {
+  margin-top: 32px;
+  padding-top: 25px;
+  border-top: 1px dashed #e4c9c3;
+}
+
+h2 {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.la-thu {
+  margin-top: 20px;
+  padding: 23px;
+  background: #fff5ed;
+  border-left: 3px solid #dba2aa;
+}
+
+.la-thu p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.ky-ten {
+  margin-top: 20px;
+  text-align: right;
+  color: var(--hong);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 19px;
+}
+
+.mo-ta {
+  margin: 0 auto 22px;
+  text-align: center;
+  color: var(--chu-nhat);
+  font-size: 13px;
+  line-height: 2;
+}
+
+label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 13px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e5d2cc;
+  border-radius: 8px;
+  background: #fffdf9;
+  color: var(--chu);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--hong);
+}
+
+textarea {
+  min-height: 180px;
+  resize: vertical;
+  line-height: 1.9;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: #b8a29b;
+}
+
+.ghi-chu {
+  margin-top: 7px;
+  color: #a08780;
+  font-size: 11px;
+}
+
+.nut-gui {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: var(--hong);
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.nut-gui:hover {
+  background: #a95e74;
+}
+
+.nut-gui:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.thong-bao {
+  display: none;
+  margin-top: 15px;
+  padding: 13px;
+  border-radius: 8px;
+  background: #f7e5e7;
+  text-align: center;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.thong-bao.hien {
+  display: block;
+}
+
+.chan-trang {
+  margin-top: 35px;
+  padding-top: 22px;
+  border-top: 1px dashed #e4c9c3;
+  text-align: center;
+  color: #a1847d;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .trang-giay {
+    padding: 24px 18px;
+  }
+
+  .khung-anh img {
+    height: 210px;
+  }
+
+  .la-thu {
+    padding: 17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="trang-giay">
+
+  <div class="bang-keo"></div>
+
+  <div class="tieu-de-nho">
+    MỘT MÓN QUÀ NHỎ DÀNH CHO MỸ HẢO
+  </div>
+
+  <h1>Chúc Mừng<br><em>Sinh Nhật Mỹ Hảo</em> ♡</h1>
+
+  <p class="mo-dau">
+    Ngày 25 tháng 10 năm 2026<br>
+    Một ngày thật đặc biệt dành cho bạn.
+  </p>
+
+  <div class="trang-tri">🎂 🌷 🎀</div>
+
+  <!-- Đặt ảnh cùng thư mục, đặt tên sinhnhat.jpg -->
+  <figure class="khung-anh">
+    <img
+      src="sinhnhat.jpg"
+      alt="Bức ảnh kỷ niệm dành tặng Mỹ Hảo"
+      onerror="this.style.display='none'"
+    >
+    <figcaption class="chu-thich-anh">
+      Mong những điều tốt đẹp luôn ở bên bạn ♡
+    </figcaption>
+  </figure>
+
+  <section class="phan">
+
+    <h2>Gửi Mỹ Hảo, 💌</h2>
+
+    <div class="la-thu">
+
+      <p>
+        Nhân ngày 25/10/2026, Vĩ Văn chúc Mỹ Hảo
+        có một ngày sinh nhật thật vui vẻ và hạnh phúc.
+      </p>
+
+      <p>
+        Mong rằng dù có chuyện gì xảy ra, bạn vẫn luôn
+        nhớ rằng bên cạnh bạn còn có gia đình và bạn bè,
+        những người luôn yêu thương, quan tâm và sẵn sàng
+        ở bên cạnh bạn.
+      </p>
+
+      <p>
+        Hy vọng tuổi mới sẽ mang đến cho bạn thật nhiều
+        niềm vui, những trải nghiệm đáng nhớ và những
+        điều tốt đẹp mà bạn luôn mong đợi.
+      </p>
+
+      <p>
+        Có những ngày vui vẻ và cũng sẽ có những ngày
+        không như ý muốn, nhưng mong bạn luôn giữ được
+        sự lạc quan, yêu thương bản thân và tin rằng
+        mọi chuyện rồi sẽ dần ổn hơn.
+      </p>
+
+      <p>
+        Đặc biệt, hãy nhớ giữ gìn sức khỏe, ăn uống đầy đủ,
+        nghỉ ngơi thật tốt và đừng quên chăm sóc bản thân.
+        Sức khỏe và sự bình an của bạn cũng rất quan trọng.
+      </p>
+
+      <p>
+        Chúc Mỹ Hảo tuổi mới thật nhiều niềm vui,
+        luôn được yêu thương và có đủ dũng khí để
+        thực hiện những điều mình mong muốn.
+      </p>
+
+      <p>
+        Sinh nhật vui vẻ nhé, Mỹ Hảo! ♡
+      </p>
+
+      <div class="ky-ten">
+        — Vĩ Văn ♡
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="phan">
+
+    <h2>Điều Ước Tuổi Mới ✨</h2>
+
+    <p class="mo-ta">
+      Bước sang tuổi mới, Mỹ Hảo có điều gì mong muốn
+      cho bản thân mình không?<br><br>
+
+      Hãy viết một dòng caption về những điều bạn
+      hy vọng, những ước mơ bạn muốn thực hiện
+      hoặc những điều bạn muốn gửi gắm đến tuổi mới.<br><br>
+
+      Hãy cứ viết theo cách của bạn nhé. ♡
+    </p>
+
+    <form id="bieuMau">
+
+      <label for="caption">
+        Caption điều ước của Mỹ Hảo ♡
+      </label>
+
+      <textarea
+        id="caption"
+        name="caption_dieu_uoc"
+        maxlength="2000"
+        required
+        placeholder="Tuổi mới, mình mong rằng...
+
+Mình hy vọng sẽ...
+Mình muốn thực hiện...
+Điều mình mong chờ nhất là...
+Mong rằng bản thân trong tuổi mới sẽ..."
+      ></textarea>
+
+      <div class="ghi-chu">
+        Đây là nơi để bạn lưu lại những mong muốn
+        của mình cho tuổi mới.
+      </div>
+
+      <label for="bietDanh">
+        Tên hoặc biệt danh (không bắt buộc)
+      </label>
+
+      <input
+        id="bietDanh"
+        name="biet_danh"
+        type="text"
+        maxlength="80"
+        placeholder="Mỹ Hảo hoặc biệt danh của bạn"
+      >
+
+      <!-- Trường chống spam -->
+      <input
+        type="text"
+        name="_gotcha"
+        tabindex="-1"
+        autocomplete="off"
+        style="position:absolute;left:-9999px"
+        aria-hidden="true"
+      >
+
+      <button class="nut-gui" id="nutGui" type="submit">
+        Gửi Điều Ước Của Mình ♡
+      </button>
+
+      <div
+        class="thong-bao"
+        id="thongBao"
+        role="status"
+        aria-live="polite"
+      ></div>
+
+    </form>
+
+  </section>
+
+  <footer class="chan-trang">
+    Mong bạn luôn vui vẻ, hạnh phúc và bình an.
+    <div style="margin-top:8px">
+      Một lời chúc từ Vĩ Văn · 25.10.2026
+    </div>
+  </footer>
+
+</main>
+
+<script>
+const bieuMau = document.getElementById("bieuMau");
+const thongBao = document.getElementById("thongBao");
+const nutGui = document.getElementById("nutGui");
+
+// Endpoint FormSubmit bạn đã tạo trên trang web.
+const DIA_CHI_BIEU_MAU =
+  "https://formsubmit.app/f/qtc9nnbbkf";
+
+bieuMau.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  thongBao.classList.add("hien");
+
+  if (!DIA_CHI_BIEU_MAU) {
+    thongBao.textContent =
+      "Chức năng gửi điều ước chưa được cấu hình.";
+    return;
+  }
+
+  nutGui.disabled = true;
+  nutGui.textContent = "Đang gửi điều ước...";
+
+  try {
+    const phanHoi = await fetch(DIA_CHI_BIEU_MAU, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json"
+      },
+      body: new FormData(bieuMau)
+    });
+
+    const ketQua = await phanHoi.json();
+
+    if (
+      !phanHoi.ok ||
+      ketQua.ok === false ||
+      ketQua.error
+    ) {
+      throw new Error("Dịch vụ chưa xác nhận gửi thành công.");
+    }
+
+    thongBao.textContent =
+      "Cảm ơn Mỹ Hảo đã chia sẻ điều ước của mình ♡ " +
+      "Dịch vụ đã xác nhận gửi lời nhắn.";
+
+    bieuMau.reset();
+
+  } catch (loi) {
+    thongBao.textContent =
+      "Chưa gửi được điều ước. Hãy thử lại sau " +
+      "và kiểm tra cấu hình biểu mẫu nhé.";
+  } finally {
+    nutGui.disabled = false;
+    nutGui.textContent = "Gửi Điều Ước Của Mình ♡";
+  }
+});
+</script>
+
+</body>
+</html>
